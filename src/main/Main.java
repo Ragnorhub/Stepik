@@ -1,6 +1,7 @@
 package main;
 
 import classes.*;
+import test.MyArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,34 +30,25 @@ public class Main {
         human2.setName("Ostin");
         human3.setName("Stella");
         System.out.println((human1.getAge() + human2.getAge() + human3.getAge()) / 3.0);
-        String[] employees = getEmployees();
-        String[] newArray = new String[employees.length+1];
-        for (int i = 0; i < employees.length; i++) {
-            newArray[i] = employees[i];
-        }
-        newArray[newArray.length-1] = "James";
-        employees = newArray;
-        employees[0] = null;
-        String[] newestArray = new String[employees.length-1];
-        for (int i = 0, j = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                newestArray[j] = employees[i];
-                j++;
-            }
-        }
-        employees = newestArray;
-        for (String employee : employees) {
-            System.out.println(employee);
+
+        MyArrayList employees = getEmployees();
+        employees.add("James");
+        employees.remove("Emma");
+        employees.remove(2);
+        for (int i = 0; i < employees.getSize(); i++) {
+            System.out.println(employees.get(i));
         }
 
     }
-    private static String[] getEmployees() {
-        String[] employees = new String[5];
-        employees[0] = "John";
-        employees[1] = "Olivia";
-        employees[2] = "Emma";
-        employees[3] = "Max";
-        employees[4] = "Nick";
+    private static MyArrayList getEmployees() {
+        MyArrayList employees = new MyArrayList();
+        employees.add("John");
+        employees.add("Olivia");
+        employees.add("Emma");
+        employees.add("Max");
+        employees.add("Nick");
         return employees;
     }
+
+
 }
