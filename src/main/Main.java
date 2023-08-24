@@ -38,7 +38,12 @@ public class Main {
         for (int i = 0; i < employees.getSize(); i++) {
             System.out.println(employees.get(i));
         }
-
+        String s = "This is John. He is 27 years old.";
+        String name = s.substring(8,12);
+        System.out.println();
+        int age = Integer.parseInt(s.substring(20,22));
+        Person person = new Person(name, age);
+        System.out.println(person.getName() + " " + person.getAge());
     }
     private static MyArrayList getEmployees() {
         MyArrayList employees = new MyArrayList();
@@ -49,6 +54,4 @@ public class Main {
         employees.add("Nick");
         return employees;
     }
-
-
 }
