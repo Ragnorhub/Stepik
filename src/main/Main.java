@@ -43,7 +43,7 @@ public class Main {
         System.out.println();
         int age = Integer.parseInt(s.substring(20,22));
         Person person = new Person(name, age);
-        System.out.println(person.getName() + " " + person.getAge());
+        System.out.println("Name: " + person.getName() + "\nAge: " + person.getAge());
     }
     private static MyArrayList getEmployees() {
         MyArrayList employees = new MyArrayList();
