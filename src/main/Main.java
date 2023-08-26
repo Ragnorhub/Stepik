@@ -27,10 +27,12 @@ public class Main {
         human2.setWeight(67);
         human3.setWeight(98);
         human1.setName("John");
-        human2.setName("Ostin");
+        human2.setName("Malanie");
         human3.setName("Stella");
         System.out.println((human1.getAge() + human2.getAge() + human3.getAge()) / 3.0);
+        System.out.println(human1.getName() + "\n" + human2.getName()  + "\n" + human3.getName());
 
+        System.out.println();
         MyArrayList employees = getEmployees();
         employees.add("James");
         employees.remove("Emma");
