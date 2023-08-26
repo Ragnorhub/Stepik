@@ -1,7 +1,10 @@
 package main;
 
 import classes.*;
-import test.MyArrayList;
+//import test.MyArrayList;
+
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,12 +36,11 @@ public class Main {
         System.out.println(human1.getName() + "\n" + human2.getName()  + "\n" + human3.getName());
 
         System.out.println();
-        MyArrayList employees = getEmployees();
+        ArrayList<String> employees = getEmployees();
         employees.add("James");
-        employees.remove("Emma");
-        employees.remove(2);
-        for (int i = 0; i < employees.getSize(); i++) {
-            System.out.println(employees.get(i));
+        employees.remove("Nick");
+        for (String employee : employees) {
+            System.out.println(employee);
         }
         String s = "This is John. He is 27 years old.";
         String name = s.substring(8,12);
@@ -46,9 +48,14 @@ public class Main {
         int age = Integer.parseInt(s.substring(20,22));
         Person person = new Person(name, age);
         System.out.println("Name: " + person.getName() + "\nAge: " + person.getAge());
+        getUnification();
+        HashSet<String> names = getHumans();
+        for (String human : names) {
+            System.out.println(human);
+        }
     }
-    private static MyArrayList getEmployees() {
-        MyArrayList employees = new MyArrayList();
+    private static ArrayList<String> getEmployees() {
+        ArrayList<String> employees = new ArrayList<>();
         employees.add("John");
         employees.add("Olivia");
         employees.add("Emma");
@@ -56,4 +63,42 @@ public class Main {
         employees.add("Nick");
         return employees;
     }
+    private static ArrayList<String> getNames() {
+        ArrayList<String> names = new ArrayList<>(5);
+        names.add("John");
+        names.add("Olivia");
+        names.add("Emma");
+        names.add("Max");
+        names.add("Nick");
+        return names;
+    }
+    private static ArrayList<Integer> getNumbers() {
+        ArrayList<Integer> numbers = new ArrayList<>(5);
+        for (int i = 0; i < 5; i++) {
+            numbers.add(i);
+        }
+        return numbers;
+    }
+
+    private static ArrayList<String> getUnification() {
+        ArrayList<String> unification = new ArrayList<>(5);
+        for (int i = 0; i < 5; i++) {
+            unification.add(getNumbers().get(i) + " - " + getNames().get(i));
+        }
+        for (String numberAndNames : unification) {
+            System.out.println(numberAndNames);
+        }
+        System.out.println();
+        return unification;
+    }
+    private static HashSet<String> getHumans() {
+        HashSet<String> employees = new HashSet<>();
+        employees.add("John");
+        employees.add("Olivia");
+        employees.add("Emma");
+        employees.add("Max");
+        employees.add("Nick");
+        return employees;
+    }
+
 }
