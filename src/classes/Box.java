@@ -1,11 +1,33 @@
 package classes;
 
 public class Box {
-    private int length;
-    private int width;
-    private int height;
+    private double length;
+    private double width;
+    private double height;
 
-    public int getLength() {
+    public Box(Box another) {
+        this(another.length, another.width, another.height);
+    }
+
+    public Box(double length, double width, double height) {
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+
+    public Box(double size) {
+        this(10, 10, 10);
+    }
+
+    public Box() {
+        this(10);
+    }
+
+    public void showInfo() {
+        System.out.println("Width: " + width + "\nLength: " + length + "\nHeight: " + height);
+    }
+
+    public double getLength() {
         return length;
     }
 
@@ -13,7 +35,7 @@ public class Box {
         this.length = length;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
@@ -21,7 +43,7 @@ public class Box {
         this.width = width;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 

@@ -1,6 +1,7 @@
 package main;
 
 import classes.*;
+import inheritance.*;
 import test.MyArrayList;
 
 public class Main {
@@ -30,7 +31,7 @@ public class Main {
         human2.setName("Malanie");
         human3.setName("Stella");
         System.out.println((human1.getAge() + human2.getAge() + human3.getAge()) / 3.0);
-        System.out.println(human1.getName() + "\n" + human2.getName()  + "\n" + human3.getName());
+        System.out.println(human1.getName() + "\n" + human2.getName() + "\n" + human3.getName());
 
         System.out.println();
         MyArrayList employees = getEmployees();
@@ -41,12 +42,29 @@ public class Main {
             System.out.println(employees.get(i));
         }
         String s = "This is John. He is 27 years old.";
-        String name = s.substring(8,12);
+        String name = s.substring(8, 12);
         System.out.println();
-        int age = Integer.parseInt(s.substring(20,22));
+        int age = Integer.parseInt(s.substring(20, 22));
         Person person = new Person(name, age);
         System.out.println("Name: " + person.getName() + "\nAge: " + person.getAge());
+        System.out.println();
+        Cat cat = new Cat();
+        Lion lion = new Lion();
+        System.out.println("Cat can eat Person: " + cat.isCanEatPerson() + "\nLion can eat Person: " + lion.isCanEatPerson());
+        cat.eat();
+        lion.eat();
+        Box box = new Box(10);
+        WeightBox weightBox = new WeightBox(box, 20);
+        box.showInfo();
+        weightBox.showInfo();
+        Rectangle rect = new Rectangle(10,20);
+        rect.showPerimetr();
+        Triangle tri = new Triangle(12, 23, 34);
+        tri.showPerimetr();
+        ColoredRectangle rec = new ColoredRectangle(34,45, "green");
+        rec.showPerimetr();
     }
+
     private static MyArrayList getEmployees() {
         MyArrayList employees = new MyArrayList();
         employees.add("John");
