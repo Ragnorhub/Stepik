@@ -25,7 +25,7 @@ public class Main {
         animals.add(cat);
         animals.add(dog);
         animals.add(bird);
-        for (AbleToRun ableToRun:animals) {
+        for (AbleToRun ableToRun : animals) {
             ableToRun.run();
         }
         AbleToFly ableToFly = new Bird();
@@ -39,7 +39,7 @@ public class Main {
         //workers.add(director);
         workers.add(programmer);
         workers.add(cook);
-        for (Worker worker: workers) {
+        for (Worker worker : workers) {
             worker.work();
         }
 

@@ -1,6 +1,6 @@
 package interfaces;
 
-public class Programmer implements Worker, Driver{
+public class Programmer implements Worker, Driver {
     @Override
     public void work() {
         System.out.println("Программист работает");

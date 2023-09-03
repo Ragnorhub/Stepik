@@ -11,6 +11,7 @@ public class Director {
         worker1.work();
         worker2.work();
     }
+
     public void force(Worker worker) {
         worker.work();
     }
